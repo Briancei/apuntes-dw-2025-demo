@@ -1,0 +1,16 @@
+/* Estilos de mi pagina*/
+.caja{
+    border: 2px dashed salmon;
+    margin: 10px;
+    padding: 10px;
+    width: 400px;
+    box-sizing: border-box; /* solo contenido */
+    }
+
+.alternativa {
+
+    border: 3px dashed green;
+    border-style: double;
+    
+    box-sizing: border-box;
+}

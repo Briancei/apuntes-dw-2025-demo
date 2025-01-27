@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        
+        .box {
+        
+            width: 100px;
+            height: 100px;
+            padding: 5px;
+            margin: 10px;
+
+            background-color: #eb9d37;
+            border: 4px solid black;
+            box-shadow: inset 10px 10px 10px rgb(253,200,102); /* inset sombra interna */
+            border-radius: 255px 15px 225px 15px/1px 2px 3px 4px;
+/* propiedades de CSS standard */
+            color: rgb(43, 41, 41);
+            filter: drop-shadow(  2px 2px 2px rgba(0,0,0,0.5)  );
+            font-weight: bold;
+            font-size:large;
+            text-align:center;
+        
+            }
+
+    .inline {
+        display: inline;
+    }
+    .block {
+        display: block;
+    }
+    .inline-block {
+        display: inline-block;
+}
+.hidden {
+    display: none;
+}
+    </style>
+</head>
+<body>
+    <h1>Display</h1>
+
+    <h2>Display: Inline</h2>
+    <span class="box">"Caja 1: Elemento inline, no tengo height o width"></span>
+    <span class="box">"Caja2"></span> 
+    <div>
+    <br class="block" style="margin-top: 50px;">Tampoco se aplican los margin top y bottom.</br>
+</div>
+    
+    <h2>Display: Block</h2>
+    <span class="box block">"Caja 1 gsdgdg sdgdfgs dgsdg" </span> 
+    <span class="box block">"Caja 2"></span>
+
+
+    
+    <h2>Display: Inline-block</h2> 
+    <!--Nos permite combinar ambas opcionesm pidiendo aplciar, width y heigth.-->
+    <span class="box inline-block">"Caja1"></span>
+    <span class="box inline-block">"Caja2"></span>
+
+
+
+    <h2>Display: None</h2>
+
+    Cajas 2 invisible:
+    <span class="box">"Caja1"></span>
+    <span class="box">"Caja2"></span> <!-- Si añades hidden no se ve -->
+    <span class="box">"Caja3"></span>
+    
+    
+    
+
+
+
+</body>
+</html>
