@@ -82,7 +82,132 @@
             justify-content: space-around; /* laterales 1/2 de los centrales*/
         }
 
-    </style>
+        .ej4 {
+            align-items: center; 
+             justify-content: center;
+             } 
+      .blue{
+            background-color: blue;
+        }
+        .boxDouble2 {
+            width: 900px;
+        }
+        .ej5 {
+            background-color: red;
+          justify-content: baseline;
+}
+
+.caja1 {
+    width: 100px;
+        height: 100px;
+        background-color: #eb9d37;
+        border: 4px solid black;
+        box-shadow: inset 10px 10px 10px rgb(253,200,102); 
+        border-radius: 255px 15px 225px 15px/1px 2px 3px 4px;
+
+        color: rgb(43, 41, 41);
+        filter: drop-shadow(  2px 2px 2px rgba(0,0,0,0.5)  );
+
+        
+     display: flex;
+        justify-content: center;
+        align-items: center;
+   order: 3;
+}
+
+.caja2 {
+    width: 100px;
+        height: 100px;
+        background-color: #eb9d37;
+        border: 4px solid black;
+        box-shadow: inset 10px 10px 10px rgb(253,200,102); 
+        border-radius: 255px 15px 225px 15px/1px 2px 3px 4px;
+
+        color: rgb(43, 41, 41);
+        filter: drop-shadow(  2px 2px 2px rgba(0,0,0,0.5)  );
+
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    order: 1;
+}
+
+.caja3 {
+    width: 100px;
+        height: 100px;
+        background-color: #eb9d37;
+        border: 4px solid black;
+        box-shadow: inset 10px 10px 10px rgb(253,200,102); 
+        border-radius: 255px 15px 225px 15px/1px 2px 3px 4px;
+
+        color: rgb(43, 41, 41);
+        filter: drop-shadow(  2px 2px 2px rgba(0,0,0,0.5)  );
+
+        /*Centrar contenido */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    order: 2;
+}
+.ej6 {
+    background-color: orange;
+}
+   .caja4  {
+    width: 100px;
+        height: 100px;
+        background-color: #eb9d37;
+        border: 4px solid black;
+        box-shadow: inset 10px 10px 10px rgb(253,200,102); 
+        border-radius: 255px 15px 225px 15px/1px 2px 3px 4px;
+
+        color: rgb(43, 41, 41);
+        filter: drop-shadow(  2px 2px 2px rgba(0,0,0,0.5)  );
+
+        /*Centrar contenido */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    flex-grow: 1;
+}
+
+.caja5 {
+    width: 100px;
+        height: 100px;
+        background-color: #eb9d37;
+        border: 4px solid black;
+        box-shadow: inset 10px 10px 10px rgb(253,200,102); 
+        border-radius: 255px 15px 225px 15px/1px 2px 3px 4px;
+
+        color: rgb(43, 41, 41);
+        filter: drop-shadow(  2px 2px 2px rgba(0,0,0,0.5)  );
+
+        /*Centrar contenido */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    flex-grow: 2;
+}
+
+.caja6 {
+    width: 100px;
+        height: 100px;
+        background-color: #eb9d37;
+        border: 4px solid black;
+        box-shadow: inset 10px 10px 10px rgb(253,200,102); 
+        border-radius: 255px 15px 225px 15px/1px 2px 3px 4px;
+
+        color: rgb(43, 41, 41);
+        filter: drop-shadow(  2px 2px 2px rgba(0,0,0,0.5)  );
+
+        /*Centrar contenido */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    flex-grow: 1;
+}
+
+         </style>
 </head>
 <body>
 
@@ -126,11 +251,33 @@
         <div class="box boxDouble">3 d</div>
         </div>
 
-        <h3>align-items</h3>
+        <h3><b><u>align-items</u></b></h3>
 
-        <h3>Order</h3>
+         <div class="flexx ej4 blue">
+            <div class="box boxDouble2"> align-items es una herramienta fundamental para controlar la disposición de los elementos en un diseño flexbox. Se utiliza ampliamente para alinear elementos verticalmente en barras de navegación, diseños de tarjetas, formularios y muchos otros componentes de la interfaz de usuario.</div>
+            <div class="box">2</div>
+            <div class="box boxDouble">3 d</div>
+            </div>
+
+
+        <h3><b><u>Order</u></b></h3>
+
+         <p><b>order</b> se utiliza dentro de un contenedor flexible (flexbox) para controlar el orden en que se muestran los elementos flexibles (los hijos directos del contenedor).</p>
+
+        <div class="flexx ej5 red">
+            <div class="caja1">1</div>
+            <div class="caja2">2</div>
+            <div class="caja3">3</div>
+            </div>
+
+
 
         <h3>Flex grow</h3>
+        <div class="flexx ej6 orange">
+            <div class="caja4">1</div>
+            <div class="caja5">2</div>
+            <div class="caja6">3</div>
+            </div>
 
 </body>
 </html>
