@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Completo</title>
+
+    <style>
+        /* Reset de HTML */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Contenedor Layout General */
+        .container {
+            display:flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        /* Estilos para el header y footer */
+        .header, 
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+        .footer {
+            text-align: center;
+        }
+
+
+        /* Estilos para la navegación del header */
+        .nav {
+            display:flex;
+            justify-content: space-between ;
+        }
+
+        .nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        .header a, 
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .header a:hover, 
+        .footer a:hover {
+            color: #999;
+        }
+
+        /* main: incluye sidebar + content */
+        .main {
+            display: flex;
+            flex:1;
+        }
+
+        /* Estilos para la navegación del sidebar */
+        .sidebar {
+            background-color: #f0f0f0;
+            width: 200px;
+            padding: 10px;
+        }
+
+        .sidebar ul {
+            margin: 10px;
+            list-style-type: none;
+        }
+        .sidebar a {
+            text-decoration: none;
+            color: black;
+        }
+        .sidebar a:hover {
+            color: teal;
+        }
+
+
+        /* EStilos para el contenido */
+        .content {
+            display:flex;
+            flex-direction: column;
+            flex: 1;
+            padding: 10px;
+
+        }
+
+        .section {
+            padding: 10px;
+
+        }
+
+        .section:nth-child(even) { /* par o impar*/
+            background-color: #f3f3f3;
+        } 
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+
+        }
+
+        /* 0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f Número decimales y hexadecilames, para colores*/ 
+
+        .Card {
+            background-color: gray;
+            color: white;
+            padding: 20px;
+
+            flex-grow: 1;
+            /* permite al box crecer*/
+            flex-shrink: 0;
+            /* permite ser mas pequeña */
+            flex-basis: 200px;
+            /* vlor inicial de nuestro elemento*/
+
+            flex: 1 0 200px;
+            /*Esto es igual a las 3 de arriba*/
+        }
+        /* utility class */
+        .card {
+            box-shadow: 2px 2px 5px; color: #bbb; /* #bbbbbb */
+            margin: 5px;
+            border-radius: 5px;
+        }
+
+
+
+</style>
+</head>
+<body>
+    
+    <!-- 
+    container: Es el contenedor principal que engloba todo el layout.
+    header: Se coloca en la parte superior de la página.
+    main: Contiene el contenido principal de la página, que incluye el sidebar y el content.
+    sidebar: Se coloca a la izquierda dentro del main.
+    content: Se coloca a la derecha dentro del main y contiene múltiples sections.
+    section: Representa las secciones de contenido dentro del content.
+    footer: Se coloca en la parte inferior de la página, fuera del main. 
+    -->
+
+    <!-- container: Contenedor que engloba todo el layout -->
+    <div class="container">
+
+
+        <div class="header">
+            <div class="nav">
+                <div>Logo</div>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Acerca de</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    
+        <!-- main: Contenido Principal (incluye sidebar que también es parte del contenido) -->
+        <div class="main">
+            <div class="sidebar">
+                <h2>Barra lateral</h2>
+                <ul>
+                    <li><a href="#">Enlace 1</a></li>
+                    <li><a href="#">Enlace 2</a></li>
+                    <li><a href="#">Enlace 3</a></li>
+                </ul>
+            </div>
+    
+            <!-- Contenido a la derecha: Nuestro container de secciones  -->
+            <div class="content">
+
+                <div class="section card"> 
+                    <h2>Sección 1</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda exercitationem expedita fugiat ipsa accusantium quasi voluptatibus iste eveniet. Eligendi dignissimos, explicabo doloribus corporis illo exercitationem accusamus placeat repudiandae earum soluta.</p></div>
+                    <div class="section card">
+
+                        <h2>Crear GRID</h2>
+
+                        <div class="grid-container">
+
+                            <div class="Card">tarjeta 1</div>
+                            <div class="Card">tarjeta 2</div>
+                            <div class="Card">tarjeta 3</div>
+                            <div class="Card">tarjeta 4</div>
+                            <div class="Card">tarjeta 5</div>
+                            <div class="Card">tarjeta 6</div>
+                        </div>
+
+                    </div>
+
+                        <div><h2>Sección 2</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda exercitationem expedita fugiat ipsa accusantium quasi voluptatibus iste eveniet. Eligendi dignissimos, explicabo doloribus corporis illo exercitationem accusamus placeat repudiandae earum soluta.</p></div>
+
+                        <div class="section card"> 
+                            <h2>Sección 3</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda exercitationem expedita fugiat ipsa accusantium quasi voluptatibus iste eveniet. Eligendi dignissimos, explicabo doloribus corporis illo exercitationem accusamus placeat repudiandae earum soluta.</p>
+                        </div>
+
+                        <div class="section card"> 
+                            <h2>Sección 4</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda exercitationem expedita fugiat ipsa accusantium quasi voluptatibus iste eveniet. Eligendi dignissimos, explicabo doloribus corporis illo exercitationem accusamus placeat repudiandae earum soluta.</p>
+                        </div>
+         </div>
+           
+            </div>
+        </div>
+    
+        <div class="footer">
+            <p>Brian &copy; 2025 - Todos Los derechos reservados. <a href="#">Terminos y Condiciones</a></p>
+        </div>
+
+
+    </div>
+    
+</body>
+</html>

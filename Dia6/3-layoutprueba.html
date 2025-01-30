@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="styles.css">
     <style>
 
-    /* Estilos generales */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -17,9 +16,6 @@ body {
     min-height: 100vh;
 }
 
-header, nav, main, footer {
-    padding: 20px;
-}
 
 header {
     background-color: #4CAF50;
@@ -48,6 +44,7 @@ nav ul li a {
     text-decoration: none;
 }
 
+
 main {
     flex: 1;
     display: flex;
@@ -56,19 +53,19 @@ main {
 }
 
 footer {
+    display: flex;
     background-color: #333;
     color: white;
     text-align: center;
 }
 
-/* Layout Vertical */
+
 .vertical-layout {
     background-color: #f4f4f4;
     padding: 20px;
     border: 1px solid #ddd;
 }
 
-/* Layout Horizontal */
 .horizontal-layout {
     display: flex;
     justify-content: space-between;
@@ -93,19 +90,69 @@ footer {
 .horizontal-layout .box:last-child {
     margin-right: 0;
 }
+.sidebar {
+            width: 250px; 
+            padding: 20px;
+            background-color: beige;
+}
+.sidebar{
+            width: 250px; 
+            padding: 20px;
+            background-color: beige;
+
+        }
+        .container {
+            margin: 0px;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            gap: 4px;
+        }
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .sidebar ul li a:hover {
+            color: teal;
+
+        }
+
+        .main-content {
+            padding: 10px;
+
+        }
+        .container {
+            display:flex;
+            background-color: teal;
+            height: 100vh;}
 </style>
 </head>
 
 
 <body>
-     <nav>
-        <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Acerca de</a></li>
-            <li><a href="#">Servicios</a></li>
-            <li><a href="#">Contacto</a></li>
-        </ul>
-    </nav>
+
+    <div class="container">
+        <div class="sidebar">
+            <ul>
+                <li>Elemento 1</li>
+                <li>Elemento 2</li>
+                <li>Elemento 3</li>
+                <li><a href="./index.html">Home</a></li>
+            </ul>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Acerca de</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
 
     <main>
         <section class="vertical-layout">
