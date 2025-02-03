@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMULARIO</title>
+</head>
+<body>
+
+
+    <!-- 
+    GET: Recibir datos.
+    POST: enviar datos -->
+
+    <form action="./" method="GET"> 
+
+        <label for="txt-usuario">Usuario</label>
+        <input type="text" id="txt-usuario" name="txt-usuario" placeholder="Usuario">
+        <br />
+        <label for="txt-email">Email</label>
+        <input type="email" id="txt-clave" name="txt-email" placeholder="Tu correo">
+        <br />
+        <label for="txt-clave">Clave</label>
+        <input type="password" id="txt-clave" name="txt-clave" placeholder="Tu clave (8 caracteres)">
+        <br/>
+
+        <!-- Elegir solo un punto -->
+        <textarea name="descripcion" id="txt-info"  rows="5"></textarea>
+        <label for="txt-info">Biografía</label>
+        <br/>
+        <input type="radio" checked para dejar premarcado id="rd-edad" name="rd-edad" value="mayor">
+        <label for="rd-edad">Mayores de 18</label>
+        <br/>
+        <input type="radio" id="rd-edad-menor" name="rd-edad" value="menor">
+        <label for="rd-edad">Menores de 18</label>
+
+        <h3>Hobbies</h3>
+
+        <!-- Marcar varias casillas -->
+        <br/>
+        <input type="checkbox" id="chk-futbol" name="chk-futbol" value="futbol"/>
+        <label for="chk-futbol">Fútbol</label>
+        <br/>
+        <input type="checkbox" id="chk-volley" name="chk-volley" value="volley"/>
+        <label for="chk-volley">Volley</label>
+        <br/>
+        <input type="checkbox" id="chk-leer" name="chk-leer" value="leer"/>
+        <label for="chk-leer">Leer</label>
+
+        
+        <br/>
+        <label for="select_puesto">Trabajo</label>
+        <select name="select_puesto" id="select_puesto">
+            <option value="estudiante">Estudiante</option>
+            <option selected value="profesor">Profesor</option>
+            <option value="medico">Médico</option>
+        </select>
+
+
+
+
+
+
+
+
+        <input type="submit" value="Mandar...">
+
+
+        
+
+
+
+        
+
+        
+        </form>
+    
+</body>
+</html>
