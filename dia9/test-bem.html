@@ -7,30 +7,54 @@
 </head>
 
 <style>
-    
+    .header{}
+    .header__title{}
+    .header__nav {}
+    .header__items {}
+
+    .main  {}
+
+    .section{
+        border-radius: 20px;
+        color: red;
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .section__tittle {}
+    .section__texto {}
+    .section__item {}
+
 </style>
 <body>
     <div class="header">
-        <h1 class="h1">Logo</h1>
-        <div class="nav">
-            <ul class="ul">
-                <li class="li">...</li>
-                <li class="li">...</li>
+        <h1 class="header__title">Logo</h1>
+        <div class="header__items">
+            <ul class="header__items">
+                <li class="header__item">...</li>
+                <li class="header__item">...</li>
             </ul>
         </div>
     </div>
-    <div class="section">
-        <h2 class="h2">...</h2>
-        <p class="p">...</p>
-        <a class="a">...</a>
+    <div class="main">
+            <div class="section">
+        <h2 class="main__tittle">...</h2>
+        <p class="main__texto">...</p>
+        <a class="section__link">...</a>
     </div>
+    <div class="main">
+        <div class="section">
+    <h2 class="main__tittle">...</h2>
+    <p class="main__texto">...</p>
+    <a class="section__link">...</a>
+</div>
 </div>
 <div class="footer">
-    <h3 class="h3">RSS</h3>
-    <ul class="ul">
-        <li class="li">...</li>
-        <li class="li especial">...</li>
-        <li class="li">...</li>
+    <h3 class="footer__tittle">RSS</h3>
+    <ul class="footer__items">
+        <li class="footer__item">...</li>
+        <li class="footer__item footer--">...</li>
+        <li class="footer__item">...</li>
     </ul>
 </div>
 </html>

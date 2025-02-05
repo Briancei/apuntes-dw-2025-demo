@@ -37,6 +37,25 @@ Texto común
 
 - [BEM] (https://getbem.com/naming)
 
+## Para que?
+1. Comunicar un proposito o función.
+2. Comunicar la estructura del componente.
+3. Marca una expecificidad baja consistente en la estructura de la página.
+
+[Specificity]
+
+
+Su nombre es en "kebab-case" separando __ para elementos y -- para modificiadores.
+
+Ejemplo:
+.[bloque]__[elemento]--[modificador]
+
+1.**Bloque**: El nombre del componente, el cual por si solo tiene sentido: card, header, container, button, footer, menu.
+2. **Elemento**: Dentro de un bloque puede haber uno o mas elementos. Estas partes no tiene sentido por si solos: "menu item", "list iten", "checkbox label", 
+3. **Modificador**: Una variación o estado diferente para un bloque o elemento.
+Que cambia la apariencia o comportamiento del mismo. "xmas" disables, highlighted, checked, "size big", "color yellow". No olvidemos que si agregamos un modificador, la etiqueta debe tambien incluir el nombre del elemento o bloque.
+ej: `<div class="footer footer-red </div>`
+
 <style>
     .card {
 
@@ -52,7 +71,7 @@ Texto común
     form input {}
     .form__input{}
 
-    ## imagen de css specificity
+    /*imagen de css specificity*/
 
     form input #item1 .card {
         color: red;
