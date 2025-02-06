@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* ----------------- Reglas Flex ----------------- */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Alinea los elementos en el eje principal (vertical) */
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .content {
+            flex: 1; /* Hace que el contenedor flexible ocupe el espacio restante. */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .row {
+            flex: 1; /* Hace que el contenido ocupe todo el espacio restante dentro del contenedor flexible. */
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap-reverse; /* Hace que el menu se muestre en columna en el contenido en pantallas pequeñas. Pero reverse para que se muestre por encima */
+        }
+
+        aside{
+            flex: 200px;
+        }
+        section{
+            flex: 70%;
+        }
+
+        footer {
+            /* Reglas Flex */
+            align-self: flex-end; /* Alinea el footer en la parte inferior del contenedor flexible. */
+        }
+    </style>
+
+        <style>
+            /* ----------------- Estilos adicionales según sea necesario ----------------- */
+            body {
+                height: 100vh; /* Asegura que el cuerpo ocupe el 100% de la altura de la ventana. */
+                margin: 0;
+                background-color: gray;
+                color:white;
+            }
+
+            .content {
+                margin: 0 20px 0 20px;
+            }
+
+            header {
+                background: #3498db;
+            }
+            header, section, aside {
+                padding: 20px;
+            }
+
+            nav {
+                background-color: rgb(61, 26, 149);
+            
+            }
+            nav a {
+                text-decoration: none;
+                margin-right: 20px;
+                color:white;
+            }
+            nav a:hover {
+                color:violet;
+            }
+
+            nav img {
+
+            }
+
+            /* aside {
+                background-color: red;
+            } */
+            section {
+                background-color: green;
+            }
+            footer {
+                background: #3498db;
+                width: 100%;
+                padding: 10px;
+                text-align: center;
+            }
+        </style>
+</head>
+<body>
+
+    <header>
+        <a class="logo" href="/">
+            <img src="img/logo.svg" alt="">
+            <span>Mi Header</span>
+        </a>
+        <nav>
+            <a href="#">Sección 1</a>
+            <a href="#">Sección 2</a>
+            <a href="#">Sección 3</a>
+            <a href="#">Sección 4</a>
+        </nav>
+    </header>
+
+    <div class="content row">
+        <div>
+
+            <section>
+                <article>
+                    <h1>Titulo 1</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, optio. Ab facere facilis non minima esse accusamus quae beatae voluptate, deserunt sequi, laborum, blanditiis ex! Consectetur quis repudiandae iste saepe.</p>
+                </article>
+                <article>
+                    <h1>Titulo 2</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, optio. Ab facere facilis non minima esse accusamus quae beatae voluptate, deserunt sequi, laborum, blanditiis ex! Consectetur quis repudiandae iste saepe.</p>
+                </article>
+                <article>
+                    <h1>Titulo 3</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, optio. Ab facere facilis non minima esse accusamus quae beatae voluptate, deserunt sequi, laborum, blanditiis ex! Consectetur quis repudiandae iste saepe.</p>
+                </article>
+                <article>
+                    <h1>Titulo 4</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, optio. Ab facere facilis non minima esse accusamus quae beatae voluptate, deserunt sequi, laborum, blanditiis ex! Consectetur quis repudiandae iste saepe.</p>
+                </article>
+            </section>
+        </div>
+
+
+            <aside>
+                <ul>
+                    <li>item 1</li>
+                    <li>item 2</li>
+                    <li>item 3</li>
+                    <li>item 4</li>
+                </ul>
+            </aside>
+    </div>
+
+    <footer>mi footer</footer>
+    
+</body>
+</html>
