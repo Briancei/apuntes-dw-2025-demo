@@ -145,9 +145,9 @@ El mismo soporta un valor para fila y columna, o 2 valores para diferenciarlos.
     }
  ```
 
-    Las unidades que podemos utilizar son px, %, em, rem, pero se le suma una nueva de valor fraccional, o ``fr``. Este valor nos permite fraccionar el tamaño disponible.
+    - Las unidades que podemos utilizar son px, %, em, rem, pero se le suma una nueva de valor fraccional, o ``fr``. Este valor nos permite fraccionar el tamaño disponible.
 
-    Por ejemplo, si tenemos 3 columnas y definimos que la primera columna tenga un tamaño de 1fr, la segunda 2fr y la tercera de 1fr.
+    - Por ejemplo, si tenemos 3 columnas y definimos que la primera columna tenga un tamaño de 1fr, la segunda 2fr y la tercera de 1fr.
     Segunda columna ocupará el doble de espacion que las otras 2.
 
     ```css
@@ -207,7 +207,7 @@ El mismo soporta un valor para fila y columna, o 2 valores para diferenciarlos.
 }
 ```
 
-Podemos utilizar `justify-items` y `align-items` para alinear los elementos dentro de las celdas.
+- Podemos utilizar `justify-items` y `align-items` para alinear los elementos dentro de las celdas.
 Sus opciones posibles son: start, end, center, strecht y baseline. Por defecto se aplica stretch.
 ```css
 .container {
@@ -219,7 +219,7 @@ Sus opciones posibles son: start, end, center, strecht y baseline. Por defecto s
     align-items: end;
 }
 ```
-Podemos decirle a un item especifico que se alinee de manera diferente utilizando `` justify-self` y `align-self`.
+- Podemos decirle a un item especifico que se alinee de manera diferente utilizando `` justify-self` y `align-self`.
 Sus opciones son : start, end, center, stretch y baseline.
 
 ```css
@@ -229,7 +229,7 @@ Sus opciones son : start, end, center, stretch y baseline.
 
 }
 ```
-Podemos alinear nuestro grid en base a su contenedor utilizando `justify-content`
+- Podemos alinear nuestro grid en base a su contenedor utilizando `justify-content`
 y `align-content`. Sus opciones son: start, end, center, stretch, space-around, space-between, space-evenly.
 
  ```css
@@ -243,7 +243,7 @@ y `align-content`. Sus opciones son: start, end, center, stretch, space-around, 
     
 }
 ```
-Podemos crear un grid responsive con el uso de `auto-fit`. Esto nos permite que los elementos se ajusten al tamaño de el contenedor.
+- Podemos crear un grid responsive con el uso de `auto-fit`. Esto nos permite que los elementos se ajusten al tamaño de el contenedor.
 
 ```css
 .container {
