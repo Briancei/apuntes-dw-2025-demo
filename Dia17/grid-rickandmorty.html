@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid tarjetas</title>
+    <link rel="stylesheet" href="./rickmorty.css">
+    <style>
+
+.container {
+        /* column-count: 3;
+        column-width: 200px; */
+        columns: 200px 3;
+        column-gap: 20px;
+    }
+
+
+    .container2 {
+        display: grid;
+        /* Pantallas grandes 4c */
+        /* grid-template-columns: repeat(4, 1fr); */
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+@media (max-width:768px){
+        .container {
+            /* Pantallas medianas 2c  */
+            /* grid-template-columns: repeat(2, 1fr); */
+        }
+    }
+    @media (max-width:480px){
+        .container {
+            /* Pantallas medianas 2c  */
+            /* grid-template-columns: 1fr; */
+        }
+    }
+
+
+    .card {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      overflow: hidden;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+.card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .card h2 {
+      font-size: 1.2rem;
+      margin: 10px 0;
+    }
+
+    .card p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    
+    body {
+      font-family: Arial, sans-serif;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      grid-template-areas: 
+          "header header header"
+          "main main main"
+          "footer footer footer";
+      gap: 1em;
+      padding: 1em;
+  }
+  header {
+      grid-area: header;
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+  }
+  main {
+      grid-area: main;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 20px;
+  }
+  
+  .gallery {
+    flex-direction: column;
+    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+.gallery-item {
+    padding: 50px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+    width: 50;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+  footer {
+      grid-area: footer;
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+  }
+</style>
+</head>
+<header class="Header">
+    <div class="Header-container">
+      <h1 class="Header-title">Rick and Morty</h1>
+    </div>
+  </header>
+  <main class="gallery">
+    <div class="gallery-item"><img src="./img/1.jpeg" alt="img1"> Rick</div>
+    <div class="gallery-item"><img src="./img/2.jpeg" alt="img2">Morty</div>
+    <div class="gallery-item"><img src=".//img/3.jpeg" alt="img3">Summer smith</div>
+    <div class="gallery-item"><img src="./img/4.jpeg" alt="img4">Beth smith</div>
+    <div class="gallery-item"><img src="./img/5.jpeg" alt="img5">Jerry smith</div>
+    <div class="gallery-item"><img src="./img/6.jpeg" alt="img6"></div>
+    <div class="gallery-item"><img src="./img/7.jpeg" alt="img7">Abradolf linder</div>
+    <div class="gallery-item"><img src="./img/8.jpeg" alt="img8">Adjudicator rick</div>
+    <div class="gallery-item"><img src="./img/9.jpeg" alt="img9">Agency director</div>
+    <div class="gallery-item"><img src="./img/10.jpeg" alt="img10">Alan rails</div>
+    <div class="gallery-item"><img src="./img/11.jpeg" alt="img11">Albert einstein</div>
+    <div class="gallery-item"><img src="./img/12.jpeg" alt="img12">alexander</div>
+    
+</div>
+</main>
+  <hr>
+  <footer class="footer">
+  
+    </div>
+  </footer>
+  

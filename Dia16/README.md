@@ -8,7 +8,7 @@
 
 Nuevos.
 - Utilities.
-- Estados (on/off).
+- Estados (on/off ).
 
 # Utilities:
 
