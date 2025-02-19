@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrera de cajas</title>
+</head>
+<style>
+
+body{
+    background-color: rgb(253, 253, 253);
+    }
+
+.container {
+
+    background-color: brown;
+    width: 1000px;
+
+    }
+
+.container:hover .box{
+    margin-left: 900px;
+    background-color: orange;
+    }
+
+.box {
+    color: rgb(255, 249, 249);
+    background-color: black;
+    width: 100px;
+    height: 100px;
+
+}
+.box1 {
+    transition: margin ease 4s,
+    }
+.box1:hover {
+    background-color: orange ;
+    }
+
+
+.box2{
+    transition: margin linear 4s;
+    }
+
+.box3 {
+    transition: margin ease-in 4s;
+}
+
+
+.box4 {
+
+    transition: margin ease-out 4s;
+}
+
+
+.box5 {
+    transition: margin ease-in-out 4s;
+}
+
+.box6 {
+    transition: margin 4s cubic-bezier(.92,.04,.14,.89);
+}
+
+</style>
+<body>
+    <div class="container">
+
+    <div class="box box1">ease</div>
+    <div class="box box2">linear</div>
+    <div class="box box3">ease-in</div>
+    <div class="box box4">ease-out</div>
+    <div class="box box5">ease-in-out</div>
+    <div class="box box6">cubic</div>
+</div>
+</body>
+</html>

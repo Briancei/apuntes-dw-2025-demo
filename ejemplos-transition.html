@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo transiciones</title>
+</head>
+<style>
+    /* Para inputs - focus */
+    input{
+        all:unset; /* reset de estilos de nuestro input*/
+
+    }
+    input {
+        border: 1px solid green;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    input:focus{
+        border-color: red;
+        background-color: rgb(18, 110, 190);
+
+        transition: border-color 0.5 ease,
+                    background-color 0.5 ease;
+    }
+   /*Menu hover*/
+   .menu {
+    background-color: red;
+   }
+   .menu ul {
+    transform: translateX(-100px);
+    transition: transform 0.6s ease-in-out;
+   }
+   .menu:hover ul {
+   transform: translateX(0);
+   }
+
+   /* Transition - Active */
+   .card{
+    border: 1px solid green;
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+   }
+
+   .card:active {
+    transform: scale(0.9);
+    box-shadow: 0 5px 15px rgba(0,0,0,0);
+   }
+
+   
+</style>
+<body>
+    <h3>imputs - Focus</h3>
+    <input type="text">
+    <input type="text">
+
+
+    <div class="menu">
+    <h3>Menú - hover</h3>
+   <ul>
+    <li><a href="" class="a"></a>Inicio</li>
+    <li><a href="" class="a"></a>Contacto</li>
+    <li><a href="" class="a"></a>Acerca</li>
+   </ul>
+</div>
+
+<h3>Tarjeta - Active</h3>
+<div class="card">
+    <h2>Titulo</h2>
+    <p>Click sobre mí o tenerlo presionado para movil</p>
+</div>
+</body>
+</html>

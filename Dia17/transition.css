@@ -7,7 +7,7 @@ body {
     width: 100px;
     height: 100px;
     background-color: black;
-    transition: 1s linear;
+    transition: all 1s linear;
     
 }
 .box1:hover {
@@ -21,7 +21,7 @@ body {
     width: 100px;
     height: 100px;
     background-color: black;
-    transition: height 3s;
+    transition: all 3s;
     
 }
 .box2:hover {
