@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redes sociales</title>
+    <!--Iconos de google fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/controllers.css">
+    <link rel="stylesheet" href="./css/rrss.css">
+</head>
+<body class="u-bgPrimary">
+    <header class="Header u-bgPrimary">
+        <h1 class="u-txtCrotah utxtPrimay">RSS</h1>
+        
+    </header>
+
+    <main class="Main u-bgSecondary">
+        
+        <div class="Icons">
+
+            <div class="Icons">
+
+
+            <div class="Iconbox u-bgPrimary Iconbox--fb">
+                <a class="IconBox-link" href="">
+                    <div class="IconBox-layers">
+                        <span class="Iconbox-span"></span>
+                        <span class="Iconbox-span"></span>
+                        <span class="Iconbox-span"></span>
+                        <span class="Iconbox-span"></span>
+                        <span class="Iconbox-span fab fa-facebook-f"></span>
+                    </div>
+
+                    <div class="IconBox-text">
+                        Facebook
+                    </div>
+                </a>
+                
+            <div class="Iconbox u-bgPrimary Iconbox--x">
+                <a class="IconBox-link" href="">
+                    <div class="IconBox-layers">
+                        <span class="Iconbox-span"></span>
+                        <span class="Iconbox-span"></span>
+                        <span class="Iconbox-span"></span>
+                        <span class="Iconbox-span"></span>
+                        <span class="Iconbox-span fab fa-x-twitter"></span>
+                    </div>
+
+                    <div class="IconBox-text">
+                        TweetX
+                    </div>
+                </a>
+                
+            <div class="Iconbox u-bgPrimary Iconbox--insta">
+                <a class="IconBox-link" href="">
+                    <div class="IconBox-layers">
+                        <span class="Iconbox-span"></span>
+                        <span class="Iconbox-span"></span>
+                        <span class="Iconbox-span"></span>
+                        <span class="Iconbox-span"></span>
+                        <span class="Iconbox-span fab fa-instagram"></span>
+                    </div>
+
+                    <div class="IconBox-text">
+                        Instagram
+                    </div>
+                </a>
+                
+            <div class="Iconbox u-bgPrimary Iconbox--lkdin">
+                <a class="IconBox-link" href="">
+                    <div class="IconBox-layers">
+                        <span class="Iconbox-span"></span>
+                        <span class="Iconbox-span"></span>
+                        <span class="Iconbox-span"></span>
+                        <span class="Iconbox-span"></span>
+                        <span class="Iconbox-span fab fa-linkedin-in"></span>
+                    </div>
+
+                    <div class="IconBox-text">
+                        Linkedin
+                    </div>
+                </a>
+                
+            <div class="Iconbox u-bgPrimary Iconbox--yt">
+                <a class="IconBox-link" href="">
+                    <div class="IconBox-layers">
+                        <span class="Iconbox-span"></span>
+                        <span class="Iconbox-span"></span>
+                        <span class="Iconbox-span"></span>
+                        <span class="Iconbox-span"></span>
+                        <span class="Iconbox-span fab fa-youtube"></span>
+                    </div>
+
+                    <div class="IconBox-text">
+                        Youtube
+                    </div>
+                </a>
+                
+            <div class="Iconbox u-bgPrimary Iconbox--lion">
+                <a class="IconBox-link" href="">
+                    <div class="IconBox-layers">
+                        <span class="Iconbox-span"></span>
+                        <span class="Iconbox-span"></span>
+                        <span class="Iconbox-span"></span>
+                        <span class="Iconbox-span"></span>
+                        <span class="Iconbox-span">L</span>
+                    </div>
+
+                    <div class="IconBox-text">
+                        Rey león
+                    </div>
+                </a>
+
+            </div>
+        </div>
+
+    </main>
+
+    <div class="Controllers">
+        <button id="btnDireccion" class="Btn">
+            Columna
+        </button>
+
+            <button id="btnDarkLight" class="Btn Btn--icon">
+                <span class="material-symbols-outlined">
+                    dark_mode
+                </span>
+                </button>
+        
+    </div>
+
+    <script>
+//------------------------------------------------------------
+// Paso 1. Obtener elementos de nuestro DOM (documento HTML)
+//------------------------------------------------------------
+    const btnDarkLight = document.querySelector("#btnDarkLight");
+    const btnDireccion = document.querySelector("#btnDireccion");
+//------------------------------------------------------------
+// Paso 2. Crear nuestras funciones.
+
+
+
+
+// Agregar click al boton de fila/columna
+    // .. su codigo
+        // Agregar o quitar la clase de flexCol
+            //..Su codigo
+
+
+    // preguntar si tiene la clase flexCol para cambiar el texto del botón
+        //.. su codigo
+        // Codigo si se cumple la condición (texto = fila)
+
+        // Código si no se cumple la condición( texto = columna)
+//------------------------------------------------------------
+       console.log("Boton darklight es: ", btnDarkLight);  
+// Agregar escucha de Click a miBoton y llamar a la función cada vez que lo apretan.
+    btnDarkLight.addEventListener("click",()=>{
+        document.body.classList.toggle("u-Dark");
+
+        if( document.body.classList.contains("u-Dark") ) {
+            // Si tiene dark, mostrar el sol.
+            btnDarkLight.querySelector("span").innerText="light_mode";
+        } else {
+            // Si no tiene dark, mostrar la luna.
+            btnDarkLight.querySelector("span").innerText="_mode";
+        }
+        
+    });
+//------------------------------------------------------------
+//Paso 3. Ejecutar nuestro código.
+//------------------------------------------------------------
+    </script>
+</body>
+</html>
