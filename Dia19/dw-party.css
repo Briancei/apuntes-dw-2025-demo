@@ -4,9 +4,25 @@
     box-sizing: border-box;
 }
 
-body{
-    background-color: rgb(5, 5, 5);
-    color: rgb(250, 242, 242);
+:root {
+    --bg-primary: #fff;
+    --bg-secondary: #f0f0f0;
+    --txt-primary: #000;
+    --txt-secondary: #222;
+
+    --box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+
+/*------------------------------------*/
+/*            Modo oscuro             */
+/*------------------------------------*/
+.u-Dark {
+    --bg-primary: #000;
+    --bg-secondary: #222;
+    --txt-primary: #fff;
+    --txt-secondary: #ddd;
+
+    --box-shadow: 1px 1px 5px rgba(255,255,255, 0.5);
 }
 
 .layout__grid {
@@ -44,13 +60,13 @@ body{
 }
 
 .layout__footer {
-    grid-column: 1 / 4;
+    grid-column: 2 / 4;
     background-color: #080808;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 30px;
 }
 
 .hero {
