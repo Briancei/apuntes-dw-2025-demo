@@ -1,29 +1,33 @@
 //------------------------------------------------------------
     // Paso 1. Obtener elementos de nuestro DOM (documento HTML)
     //------------------------------------------------------------
-    const miBoton = document.querySelector("#btn-modo-oscuro");
-    const body = document.querySelector("body");
-    const sidebar = document.querySelector(".sidebar");
+    const btnDarkLight = document.querySelector("#btnDarkLight");
 //------------------------------------------------------------
 // Paso 2. Crear nuestras funciones.
 //------------------------------------------------------------
-    function cambiarAModoOscuro() {
-       // body.classList.add("darkMode");
-       console.log("Me hicieron Click");  // Console log era para imprimir en el inspeccionador de elementor.
-        console.log("Mi boton es:");
-        console.log(miBoton);
-        body.classList.toggle("darkMode");
-    }
+console.log("Boton darklight es: ", btnDarkLight);  
 // Agregar escucha de Click a miBoton y llamar a la función cada vez que lo apretan.
-    miBoton.addEventListener("click",cambiarAModoOscuro);
+    btnDarkLight.addEventListener("click",() => {
+        document.body.classList.toggle("u-Dark");
+
+        if( document.body.classList.contains("u-Dark") ) {
+            // Si tiene dark, mostrar el sol.
+            btnDarkLight.querySelector("span").innerText="light_mode";
+        } else {
+            // Si no tiene dark, mostrar la luna.
+            btnDarkLight.querySelector("span").innerText="dark_mode";
+        }
+        
+    });
+
+// Agregar escucha de Click a miBoton y llamar a la función cada vez que lo apretan.
+  
 //------------------------------------------------------------
 //Paso 3. Ejecutar nuestro código.
 //------------------------------------------------------------
 //cambiarAModoOscuro();
-console.log("Mi página esta funcionando");
 
 //Podemos agregar HTML dentro de nuestro contenedor
-sidebar.innerHTML = "Holaaa, estoy dentro de sidebar";
 
 
 

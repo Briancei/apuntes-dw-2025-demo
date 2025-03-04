@@ -1,0 +1,48 @@
+/* Formatos de fuentes:
+ttf: truetype -  otf: opentype  - woff:woff  -  woff:woff */
+/* https://www.dafont.com/es/search.php?q=crotah */
+
+@font-face { 
+    font-family: "Crotah"; /* Nosotros elegimos el nombre*/
+    src: url("../font/Crotahfreeversion-Italic.ttf") format('truetype'); /* Con puntito bajo de nivel para las carpetas */
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.u-txtCrotah {
+    font-family: "Crotah";
+}
+
+.Main {
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    display: flex;
+}
+
+.Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 2;
+}
+
+
+
+
+
