@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Bienvenidos a JavaScript</h1>
+
+    <button id="suma">Suma 1</button>
+    <button id="resta">Resta 1</button>
+    <button id="mult"> Multiplica x 5</button>
+
+    <h3>Cantidad de clicks</h3>
+
+    <p id="result">0</p>
+
+<!--  Convertir este input, en un input para escribir numeros. Que el usuario ingrese su edad. Y que al hacer click en un botón de entrar me diga si soy mayor de edad o no.
+  
+Ayuda: 
+En Js 'elemento.value' devuelve el valor que tenga el imput." -->
+
+    <input id="imputEdad" placeholder="Ingresa tu edad" type="number">
+
+
+    <script>
+
+        // Terminar de hacer este ejercício
+        let resultado = 0;
+        const result = document.querySelector("#result");
+
+        const botonSuma=document.querySelector("#suma");
+        botonSuma.addEventListener("click", suma);
+
+        const botonResta=document.querySelector("#resta");
+        botonResta.addEventListener("click", restar);
+
+        const botonMult=document.querySelector("#mult");
+        botonMult.addEventListener("click", multi);
+        
+
+        function suma(botonSuma,result){
+            resultado=resultado + 1;
+
+                result.textContent=resultado;
+
+
+        };
+
+        function restar(botonResta,result){
+
+        };
+
+        function multi(botonMult,result){
+
+        };
+
+
+
+
+
+    </script>
+    
+</body>
+
+</html>
