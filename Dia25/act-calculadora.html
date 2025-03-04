@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora con Grid y JavaScript</title>
+  <style>
+    
+    .calculator {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 10px;
+      max-width: 300px;
+      margin: 50px auto;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fafafa;
+    }
+    
+    .display {
+      grid-column: span 4;
+      background-color: #f2f2f2;
+      height: 50px;
+      text-align: right;
+      font-size: 2em;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    
+    button {
+      height: 50px;
+      font-size: 1.2em;
+      cursor: pointer;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      background-color: #fff;
+      transition: background-color 0.2s;
+    }
+    button:hover {
+      background-color: #e6e6e6;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <div class="display" id="display">0</div>
+    <button>7</button>
+    <button>8</button>
+    <button>9</button>
+    <button>/</button>
+    <button>4</button>
+    <button>5</button>
+    <button>6</button>
+    <button>*</button>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>-</button>
+    <button>0</button>
+    <button>.</button>
+    <button>=</button>
+    <button>+</button>
+  </div>
+
+  <script>
+    const display = document.getElementById('display');
+    const buttons = document.querySelectorAll('.calculator button');
+    let currentInput = '';
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const value = button.textContent;
+
+        if (value === '=') {
+          try {
+            
+            const result = eval(currentInput);
+            display.textContent = result;
+            currentInput = result.toString();
+          } catch (error) {
+            display.textContent = 'Error';
+            currentInput = '';
+          }
+        } else {
+          
+          if (display.textContent === '0' || display.textContent === 'Error') {
+            currentInput = '';
+          }
+          currentInput += value;
+          display.textContent = currentInput;
+        }
+      });
+    });
+  </script>
+</body>
+</html>

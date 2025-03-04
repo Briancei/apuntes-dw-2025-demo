@@ -1,4 +1,18 @@
+## Operados OR y AND
+
+```js
+const edad = 25;
+
+// para que cumpla ambas 
+
+```
+
+
+
 ## formas de escribir funciones 
+
+
+
 
 ```js
 

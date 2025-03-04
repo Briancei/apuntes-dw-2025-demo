@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Adivina el Número</title>
+  <style>
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #007BFF;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    button:hover {
+      background: #3b3d3b;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Adivina el Número</h1>
+    <button onclick="iniciarJuego()">Iniciar Juego</button>
+  </div>
+
+  <script>
+    function iniciarJuego() {
+      const numeroSecreto = Math.floor(Math.random() * 100) + 1;
+      let intento;
+
+      do {
+        intento = parseInt(prompt("Adivina el número (entre 1 y 100):"));
+        
+        if (isNaN(intento)) {
+          alert("Por favor, ingresa un número válido.");
+        } else if (intento < numeroSecreto) {
+          alert("¡Demasiado bajo!");
+        } else if (intento > numeroSecreto) {
+          alert("¡Demasiado alto!");
+        } else {
+          alert("¡Felicidades, adivinaste!");
+        }
+      } while (intento !== numeroSecreto);
+    }
+  </script>
+</body>
+</html>
