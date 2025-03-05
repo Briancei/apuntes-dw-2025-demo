@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Manipulación de Strings</title>
+</head>
+<body>
+        <!--A-1-->
+    <h1>Actividades de Manipulación</h1>
+
+        <div id="resultadoMayusculas"></div>
+        <div id="resultadoMinusculas"></div>
+
+        <!--A-2-->
+        <p id="nombreCompleto">Brian Fernández<span id="iniciales"></span></p>
+
+        <!--A-3-->
+        <input type="text" id="textoOriginal" value="Frase de BrianFernandez que va cambiar."/>
+
+        <button onclick="cambiarTexto()">Cambiar Texto</button>
+        <div id="textoCorregido"></div>
+
+        <!--A-4-->
+        
+        <form onsubmit="limpiarNombreUsuario(event)">
+            <label for="nombreUsuario">Nombre de Usuario:</label>
+            <input type="text" id="nombreUsuario" name="nombreUsuario" required>
+            <button type="submit">Enviar</button>
+
+    <script>
+
+        //A-1
+        const titulo = document.querySelector('h1');
+        //A-2
+        const nombreCompleto = "Brian Fernández";
+        const partes = nombreCompleto.split(" ");
+        const inicialNombre = partes[0].slice(0, 1);
+        const inicialApellido = partes[1].slice(0, 1);
+        const iniciales = inicialNombre + inicialApellido;
+
+        document.getElementById("iniciales").textContent = ` (${iniciales})`;
+
+        const textoMayusculas = titulo.textContent.toUpperCase();
+        document.getElementById('resultadoMayusculas').innerText = 'Texto en mayúsculas: ' +textoMayusculas;
+
+        const textoMinusculas = titulo.textContent.toLowerCase();
+        document.getElementById('resultadoMinusculas').innerText = 'Texto en minúsculas: ' +textoMinusculas;
+
+        //A-3
+        function cambiarTexto() {
+      
+        const inputTexto = document.getElementById("textoOriginal").value;
+        const nuevoTexto = inputTexto.replaceAll("TuMarca", '<span class="resaltado">TuMarca</span>');
+        document.getElementById("textoCorregido").innerText = nuevoTexto;
+        }
+
+        //A-4
+        function limpiarNombreUsuario(event) {
+      event.preventDefault(); // Evita el envío tradicional del formulario
+      // Obtiene el valor del campo de entrada y elimina los espacios en blanco
+      const nombreInput = document.getElementById("nombreUsuario");
+      const nombreLimpio = nombreInput.value.trim();
+      // Muestra el resultado en el elemento <span>
+      document.getElementById("resultado").innerText = "Nombre de usuario limpio: " + nombreLimpio;
+        }
+        
+
+    </script>
+</body>
+</html>
