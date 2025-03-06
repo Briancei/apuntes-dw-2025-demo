@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Manipulación de Strings</title>
+    <style>
+        .hl {
+            color: red;
+            font-weight: 100;
+        }
+        
+        
+    </style>
+</head>
+<body>
+        <!--A-1-->
+    <h1>Actividades de Manipulación</h1>
+
+        <div id="resultadoMayusculas"></div>
+        <div id="resultadoMinusculas"></div>
+
+        <!--A-2-->
+        <p id="nombreCompleto">brian gimenez<span id="iniciales"></span></p>
+
+        <!--A-3-->
+        <input type="text" id="inputEj3" placeholder="Ingrese un texto...">
+
+            <div id="resultadoEj3"></div>
+            <br>
+            <br>
+      
+        <!--A-4-->
+        
+        <form id="userForm">
+            <input type="text" id="username" placeholder="Nombre de usuario">
+            <button type="submit">Enviar</button>
+        </form>
+        <div class="output">
+            Nombre limpio: <span id="cleanUsername"></span>
+        </div>
+    
+
+    <script>
+
+        //A-1
+        const titulo = document.querySelector('h1');
+
+        const textoMayusculas = titulo.textContent.toUpperCase();
+        document.getElementById('resultadoMayusculas').innerText = 'Texto en mayúsculas: ' +textoMayusculas;
+
+        const textoMinusculas = titulo.textContent.toLowerCase();
+        document.getElementById('resultadoMinusculas').innerText = 'Texto en minúsculas: ' +textoMinusculas;
+        
+        //A-2
+        const nombreCompleto = document.getElementById("nombreCompleto").innerText;
+        const partes = nombreCompleto.split(" ");
+        const inicialNombre = partes[0].slice(0, 1).toUpperCase();
+        const inicialApellido = partes[1].slice(0, 1).toUpperCase();
+        const iniciales = inicialNombre + inicialApellido;
+
+        document.getElementById("iniciales").textContent = ` (${iniciales})`;
+
+        
+
+        //A-3
+        //1. Declaro variables ( todos estos pasos para tener el codigo bien)
+      const inputEj3 = document.querySelector("#inpuntEj3");
+      const divEj3 = document.querySelector("#resultadoEj3");
+      const btnEj3 = document.querySelector("#btnEj3");
+      const marca = "CEI";
+      const nuevaMarca = `<span class='hl'>${marca}</span>`;
+      
+      //2.Funciones.
+     inputEj3.addEventListener("keyup", () => {
+        
+        const inputText = inputEj3.value;
+
+        // Version1 :usar replaceAll para cambiar nuestro texto
+       // divEj3.innerHTML = inputText.replaceAll(marca, nuevaMarca);
+
+
+        // Version2: replace + regex para cambiar nuestro texto
+        // RegExp g -> global
+        // RegExp i -> ignorar mayusculas-minusculas 
+        const marcaRegex = new RegExp(marca, 'gi');
+        divEj3.innerHTML = inputText.replace(marcaRegex, nuevaMarca);
+
+
+        
+
+     });
+
+     // 3. Iniciar nuestro codigo
+
+     
+    
+
+        //A2-1
+        document.getElementById("userForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            let usernameInput = document.getElementById("username");
+            let cleanUsername = usernameInput.value.trim(); 
+            
+            document.getElementById("cleanUsername").textContent = cleanUsername; 
+        });
+    </script>
+
+</body>
+</html>

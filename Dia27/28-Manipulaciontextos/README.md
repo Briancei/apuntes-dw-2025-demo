@@ -29,6 +29,9 @@ let mensaje = `Hola, mi nombre es ${nombre} y tengo ${edad} años.`;
 //concatenacion comun
 let mensaje = "Hola, mi nombre es "+nombre+" y tengo "+edad+" años.";
 
+const mensaje = edad + 1;    //26 años
+const mensaje = edad + 1 + "años";
+
 // Insertar expresión
 const total =50;
 const iva=0.21;
@@ -74,6 +77,7 @@ console.log(texto.toLowerCase()); //me encanta javascript ( me lo devuelve en mi
 console.log(texto.toUpperCase()); //ME ENCANTA JAVASCRIPT ( me lo devuelve en mayÚsculas)
 
 // Split.
+let texto = "Me encanta Javascript";
 
 const palabras= texto.split(" ");
 console.log(palabras); // ["Me", "encanta", "Javascript"]
@@ -90,20 +94,24 @@ console.log(separacion); // ["brianfernandezgimenez", "alumnos.cei"]
 let frase="Aprender javascript es divertido";
 console.log("Parte de la frase:"), frase.slice((9,19)); //javascript.
 console.log("Desde el indice 9 al final:", frase.slice(9)); //Javascript es divertido.
+consologe.log("primeras 10 letras:", frase.slice(0,10)); //Aprender a j
+
 
 // Replace.
 let frase= "hola mundo. hola hola hola hola universo";
 console.log("remplazar 'hola' por 'Hola':" frase.replace("hola", "Hola")); // Cambia la primera que encuentre.
 console.log("remplazar 'hola' por 'Hola':" frase.replaceAll("hola", "Hola")); // Cambia todos los que encuentre.
+console.log("Reemplazar todas con RegEX", frase.replace(/hola/g, "Hola"));
 
 //Trim()
+// Ideal para text <textareas> y para forms
 let frase= "      Hola mi nombre es luka     ";
 console.log(frase.trim()); // Hola mi nombre es luka ( Quita los espacios de fuera, los que van entre palabras no.)
 
 // Includes
 let frase= " El sol brilla en el cielo";
 console.log("Contiene 'sol'?" + frase.includes("sol")); //True
-console.log("Contiene 'luna'?" + frase.includes("sol")); //False
+console.log("Contiene 'luna'?" + frase.includes("luna")); //False
 
 //startsWith y endsWith
 
@@ -118,7 +126,7 @@ let risa="Ja";
 console.log("Me causa mucha gracias:", risa.repeat(3)); //JaJaJa
 
 let frase="HolaComo Andan?";
-console.log(frase.length); // 15 letras
+console.log(frase.length); // 15 caracteres incluyendo símbolos y espacios
 
 ```
 
@@ -133,4 +141,7 @@ let resultado = frase.trim() // Elimina espacios delante y detras.
                     .replace("no me gusta", "me encanta"); // Remplaza me encanta por me gusta.
 
  // ME ENCANTA JAVASCRIPT EN DISEÑO WEB.               
+
+
+
 ```

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Filtro de Comentarios</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    textarea {
+      width: 100%;
+      height: 100px;
+    }
+    #comentarioFiltrado {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+  <h2>Ingresa tu comentario</h2>
+  <textarea id="comentario" placeholder="Tu comentario..."></textarea>
+  <button onclick="filtrarComentario()">Enviar</button>
+
+  <h3>Comentario filtrado:</h3>
+  <div id="comentarioFiltrado"></div>
+
+  <script>
+    function filtrarComentario() {
+      
+      let comentario = document.getElementById("comentario").value;
+
+      const palabrasOfensivas = ["loro", "cocodrilo", "buho"]; 
+
+      palabrasOfensivas.forEach(palabra => {
+        if (comentario.includes(palabra)) {
+          const regex = new RegExp(palabra, "gi");
+          comentario = comentario.replace(regex, "*".repeat(palabra.length));
+        }
+      });
+
+      document.getElementById("comentarioFiltrado").innerText = comentario;
+    }
+  </script>
+</body>
+</html>
