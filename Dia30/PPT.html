@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Piedra, Papel o Tijera</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f2f2f2;
+      padding-top: 50px;
+    }
+    h1 {
+      color: #333;
+    }
+    .opciones button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .resultado {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #555;
+    }
+    .estadisticas {
+      margin-top: 30px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Piedra, Papel o Tijera</h1>
+  <div class="opciones">
+    <button onclick="jugar('piedra')">Piedra</button>
+    <button onclick="jugar('papel')">Papel</button>
+    <button onclick="jugar('tijera')">Tijera</button>
+  </div>
+  <div class="resultado" id="resultado">
+    Elige una opción para comenzar a jugar.
+  </div>
+  <div class="estadisticas">
+    <p>Ganadas: <span id="ganadas">0</span></p>
+    <p>Perdidas: <span id="perdidas">0</span></p>
+    <p>Empates: <span id="empates">0</span></p>
+  </div>
+
+  <script>
+    let contadorGanadas = 0;
+    let contadorPerdidas = 0;
+    let contadorEmpates = 0;
+    
+    function jugar(opcionUsuario) {
+      const opciones = ['piedra', 'papel', 'tijera'];
+      const opcionOrdenador = opciones[Math.floor(Math.random() * opciones.length)];
+      let resultadoTexto = `Has elegido <strong>${opcionUsuario}</strong>.<br>El ordenador eligió <strong>${opcionOrdenador}</strong>.<br>`;
+        
+      if (opcionUsuario === opcionOrdenador) {
+        resultadoTexto += "<span style='color:gray;'>Empate</span>";
+        contadorEmpates++;
+      } else if (
+        (opcionUsuario === 'piedra' && opcionOrdenador === 'tijera') ||
+        (opcionUsuario === 'papel' && opcionOrdenador === 'piedra') ||
+        (opcionUsuario === 'tijera' && opcionOrdenador === 'papel')
+      ) {
+        resultadoTexto += "<span style='color:green;'>¡Ganaste!</span>";
+        contadorGanadas++;
+      } else {
+        resultadoTexto += "<span style='color:red;'>Perdiste</span>";
+        contadorPerdidas++;
+      }
+
+      document.getElementById("resultado").innerHTML = resultadoTexto;
+      document.getElementById("ganadas").textContent = contadorGanadas;
+      document.getElementById("perdidas").textContent = contadorPerdidas;
+      document.getElementById("empates").textContent = contadorEmpates;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cara o cruz</title>
+  <style>
+    body { 
+        font-family: Arial, sans-serif; text-align: center; margin-top: 50px;
+     }
+    button {
+         padding: 10px 20px; font-size: 16px; 
+        }
+    .resultado { 
+        font-size: 24px; margin: 20px;
+     }
+    .estadisticas { margin-top: 20px; 
+    }
+  </style>
+</head>
+<body>
+  <button onclick="lanzarMoneda()">Lanzar Moneda</button>
+  <div class="resultado" id="resultado">Haz clic en el botón para lanzar la moneda</div>
+  <div class="estadisticas">
+    <p>Cant de Caras: <span id="txtCara">0</span></p>
+    <p>Cant de Secas: <span id="txtSeca">0</span></p>
+    <p>Total lanzamientos: <span id="total">0</span></p>
+    <p>Porcentaje de Caras: <span id="txtPorcentaje">0</span>%</p>
+  </div>
+
+  <script>
+    const btn=document.getElementById("btnTirarMoneda");
+
+    const txtCara=document.getElementById("txtCara");
+    const txtSeca=document.getElementById("txtSeca");
+    const txtPorcentaje=document.getElementById("txtPorcentaje");
+    const txtResultado=document.getElementById("resultado");
+
+    let cantCaras=0;
+    let cantSecas=0;
+
+    btn.addEventListener("Click", ()=>{
+      //Obtener número aleatorio
+      const numeroAleatorio = Math.random(); //0.2444545
+
+      //Opcion ternaria
+      const moneda = (numeroAleatorio>0.5)  ?  "cara"    :    "Seca";
+      const resultado = moneda =="cara"     ?   cantCaras++  :  cantSecas++;
+
+      // Calcular Porcentaje de CARAS.
+      const porcentaje = cantCaras/(cantCaras+cantSecas)*100;
+
+      //  Imprimir resultado.
+
+      txtResultado.innerText=`Tiraste ${moneda}`;
+      txtCara.innerText= cantCaras;
+      txtSeca.innerText= cantSecas;
+      txtPorcentaje.innerText= Math.round(porcentaje)+'%';
+
+    })
+  </script>
+</body>
+</html>
