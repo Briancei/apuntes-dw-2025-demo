@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listeners - Ejercicios</title>
+    <style>
+        #caja {
+            width: 100px;
+            height: 100px;
+            background-color: lightgray;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px;
+            font-size: 18px;
+            border: 2px solid black;
+        }
+        button {
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+        #botonRojo { background-color: red; color: white; }
+        #botonAzul { background-color: blue; color: white; }
+    </style>
+</head>
+<body>
+
+    <button id="botonRojo">Rojo</button>
+    <button id="botonAzul">Azul</button>
+    <div id="caja">HOLA</div>
+
+    <p id="mensaje">Pasa el mouse por aquí</p> 
+
+    <script>
+        const bloque = document.getElementById("caja");
+
+        function cambiarColor(color) {
+            caja.style.backgroundColor = color;
+        }
+        // que debo hacer para que los colores esten en bucle
+        document.querySelectorAll("button").forEach(boton => {
+            boton.addEventListener("click", function() {
+                cambiarColor(this.id === "botonRojo" ? "red" : "blue");
+            });
+        });
+
+        let mensaje = document.getElementById("mensaje");
+
+        mensaje.addEventListener("mouseover", function() {
+            mensaje.textContent = "¡El mouse está aquí!";
+        });
+
+        mensaje.addEventListener("mouseout", function() {
+            mensaje.textContent = "Pasa el mouse por aquí";
+        });
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Validación de Formulario</title>
+  <style>
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <form id="formulario" action="#">
+    <label for="">Nombre</label>
+    <input type="text" id="txtNombre" name="txtNombre">
+    <button type="submit">Enviar</button>
+    <div id="errorNombre">El nombre es obligatorio</div>
+  </form>
+  <script>	
+
+  // Definimos constantes
+  const form = document.querySelector("#formulario");
+  const msgError = document.querySelector("#errorNombre");
+  const txtNombre = document.querySelector("#txtNombre");
+
+  form.addEventListener("submit",(e)=>{
+    e.preventDefault(); // decirle a mi elemento, que no haga lo que pensaba hacer.
+    console.log("submit de formulario");
+    if(txtNombre.value.trim() ===""){
+        msgError.style.display = 'block';
+        alert("error");
+    } else{
+        msgError.style.display = 'none';
+        alert("OK")
+    }
+  })
+</script>
+</body>
+</html>
