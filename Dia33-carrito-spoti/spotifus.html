@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Music Player al estilo Spotify</title>
+  <style>
+    
+    * { margin: 0; 
+        padding: 0; 
+        box-sizing: border-box; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #121212;
+      color: #fff;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      background: #02acb8;
+      padding: 20px;
+      text-align: center;
+    }
+    main {
+      flex: 1;
+      padding: 20px;
+    }
+    .playlist {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+    .track {
+      background: #181818;
+      padding: 10px;
+      border-radius: 4px;
+      width: 200px;
+      cursor: pointer;
+      transition: background 0.3s;
+      text-align: center;
+    }
+    .track:hover {
+      background: #282828;
+    }
+    .track img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+    #info {
+      padding: 15px;
+      text-align: center;
+    }
+    footer {
+      background: #282828;
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+    footer button {
+      background: #02acb8;
+      border: none;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 50px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Mis canciones favoritas</h1>
+    </header>
+    <main>
+      <div class="playlist" id="playlist"></div>
+    </main>
+    <div id="info">
+      <p id="current-track">No se está reproduciendo nada</p>
+    </div>
+    <footer>
+      <button id="anterior">Anterior</button>
+      <button id="play">Play</button>
+      <button id="pausa">Pausa</button>
+      <button id="siguiente">Siguiente</button>
+      <button id="btn-tema3">Tema 3</button>
+    </footer>
+  </div>
+  
+  <script>
+    // 1 y 10. Definir la playlist como un array de objetos.
+    const playlist = [
+      {
+        cancion: "Tema 1",
+        artista: "Canijo de Jerez",
+        imagen: "https://i.scdn.co/image/ab67616d0000b273bc42162404a67243a3dd8670",
+        url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+      },
+      {
+        cancion: "Tema 2",
+        artista: "Estopa",
+        imagen: "https://i.scdn.co/image/ab67616d0000b27353b851ba6d8ce3ab11d9824c",
+        url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"
+      },
+      {
+        cancion: "Tema 3",
+        artista: "Uña y carne",
+        imagen: "https://i.scdn.co/image/ab67616d0000b273699910ea2ed9f077e527e65f",
+        url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
+      },
+      {
+        cancion: "Tema 4",
+        artista: "The national",
+        imagen: "https://i.scdn.co/image/ab67616d00001e02fad916dcd1c8495fd7be7ee6",
+        url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3"
+      },
+      {
+        cancion: "Tema 5",
+        artista: "Hanz zimmer",
+        imagen: "https://i.scdn.co/image/ab67616d0000b273aefa672e3d99a6f21fb5faeb",
+        url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+      }
+    ];
+    
+    // Mostrar en consola cada canción.
+    playlist.forEach(item => {
+      console.log(`Canción: ${item.cancion} - Artista: ${item.artista}`);
+    });
+    
+    // Variables globales.
+    let currentIndex = 0;
+    const audioPlayer = new Audio();
+    audioPlayer.src = playlist[currentIndex].url;
+    
+    const playlistContainer = document.getElementById('playlist');
+    const currentTrackDisplay = document.getElementById('current-track');
+    
+    // Función para actualizar la información en pantalla.
+    function actualizarInfo(texto) {
+      currentTrackDisplay.textContent = texto;
+    }
+    
+    // Función para reproducir la pista actual.
+    function playTrack(index) {
+      const track = playlist[index];
+      audioPlayer.src = track.url;
+      audioPlayer.play();
+      actualizarInfo(`Reproduciendo: ${track.cancion} - ${track.artista}`);
+      console.log(`Play: ${track.cancion} - ${track.artista}`);
+    }
+    
+    // 3 y 6. Renderizar la playlist en el DOM.
+    function renderPlaylist() {
+      playlistContainer.innerHTML = "";
+      playlist.forEach((track, index) => {
+        const trackDiv = document.createElement('div');
+        trackDiv.classList.add('track');
+        trackDiv.id = `track-${index}`;
+        trackDiv.innerHTML = `
+          <img src="${track.imagen}" alt="${track.cancion}">
+          <h3>${track.cancion}</h3>
+          <p>${track.artista}</p>
+        `;
+        // Al hacer click en el DIV, reproducir esa pista y mostrar su info.
+        trackDiv.addEventListener('click', () => {
+          currentIndex = index;
+          playTrack(currentIndex);
+        });
+        playlistContainer.appendChild(trackDiv);
+      });
+    }
+    
+    renderPlaylist();
+    
+    // 5. Event listener global para mostrar el id del elemento clickeado.
+    document.addEventListener("click", (e) => {
+      if (e.target.id) {
+        console.log("Elemento clickeado, ID:", e.target.id);
+      }
+    });
+    
+    // 9. Funcionalidad de los botones de control.
+    document.getElementById('siguiente').addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % playlist.length;
+      playTrack(currentIndex);
+    });
+    
+    document.getElementById('anterior').addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + playlist.length) % playlist.length;
+      playTrack(currentIndex);
+    });
+    
+    document.getElementById('play').addEventListener('click', () => {
+      audioPlayer.play();
+      actualizarInfo(`Reproduciendo: ${playlist[currentIndex].cancion} - ${playlist[currentIndex].artista}`);
+      console.log(`Play: ${playlist[currentIndex].cancion} - ${playlist[currentIndex].artista}`);
+    });
+    
+    document.getElementById('pausa').addEventListener('click', () => {
+      audioPlayer.pause();
+      actualizarInfo(`Pausado: ${playlist[currentIndex].cancion} - ${playlist[currentIndex].artista}`);
+      console.log(`Pausa: ${playlist[currentIndex].cancion} pausada.`);
+    });
+    
+    // 4. Botón "Tema 3": Mostrar en consola la información de la pista en posición 2.
+    document.getElementById('btn-tema3').addEventListener('click', () => {
+      const track = playlist[2];
+      console.log(`Tema 3 -> ${track.cancion} - ${track.artista}`);
+    });
+  </script>
+</body>
+</html>

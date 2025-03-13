@@ -26,6 +26,8 @@
   form.addEventListener("submit",(e)=>{
     e.preventDefault(); // decirle a mi elemento, que no haga lo que pensaba hacer.
     console.log("submit de formulario");
+
+    
     if(txtNombre.value.trim() ===""){
         msgError.style.display = 'block';
         alert("error");
