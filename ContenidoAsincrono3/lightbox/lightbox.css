@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+/*----------------------------------------------------------------------------------------------------*/
+/*Primer DIV */
+/*----------------------------------------------------------------------------------------------------*/
+.content {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    margin: 10px;
+    transition: transform 0.3s ease;
+    /*transición*/
+
+}
+
+/*Primer DIV: imagen*/
+.content img {
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0px 4px 8px rgba(106, 105, 105, 0.9);
+    display: block;
+    transition: transform 0.3s ease;
+    /*transición*/
+    padding: 10px;
+}
+
+/*cuando paso por encima de la imagen del primer DIV*/
+.content:hover img {
+    transform: scale(0.9);
+}
+
+
+
+/*----------------------------------------------------------------------------------------------------*/
+/*Segundo DIV: cuando la imagen se "abre"*/
+/*----------------------------------------------------------------------------------------------------*/
+.grande {
+    display: none;
+    position: fixed;
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 8px rgba(106, 105, 105, 0.9); 
+   
+}
+
+/*imagen del segundo DIV*/
+.grande img {
+    max-width: 90%;
+    max-height: 90%;
+    box-shadow: 0px 4px 8px rgba(106, 105, 105, 0.9);
+   
+
+    
+}
+
+/*----------------------------------------------------------------------------------------------------*/
+/*Botón de cerrar*/
+/*----------------------------------------------------------------------------------------------------*/
+.cerrarButton {
+    position: absolute; 
+    top: -50px; 
+    box-shadow: 0px 0px 8px rgba(106, 105, 105, 0.9);
+    padding: 10px;
+    padding-top: 5px;
+    font-size: 20px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    
+}
