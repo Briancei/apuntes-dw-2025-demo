@@ -4,6 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        .card{
+            border-radius: 8px;
+            background-color: lightgray;
+            padding: 10px;
+            width: 400px;
+            margin: 20px;
+            box-shadow: 0 4px 80px rgba(0,0,0,0.7);
+        }
+
+        .controllers {
+            margin: 20px;
+
+        }
+    </style>
 </head>
 <body>
     <h3>Reproductor</h3>
@@ -11,13 +27,14 @@
     <div id="playlist">
     <!-- aqui van mis canciones-->
 
-    <div class="card">
-        <span class="artista">artista</span>
-        <span class="mp3">cancion</span>
+    <div class="controllers">
+        <button id="btn3">Tema 3</button>
     </div>
 </div>
 
     <script>
+        const playList = document.getElementById("playlist");
+
         const listaCanciones = [
             "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
             "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
@@ -35,16 +52,47 @@
         ]
 
         listaCanciones.forEach(cancion, idx => {
+
+            const artista = listaArtistas(idx);
+            const color = listaColores(idx);
+            
+            
+            console.log(cancion);
+            console.log(artista);
             
             
                 
-            console.log(listaArtistas(idx));
-            console.log(cancion);
-            console.log(artista);
 
             playList.innerHTML= 
-        });
+            `<div class="card">
+                Tema: ${cancion}
+                Artista:${artista}
+                Color preferido: ${color}
+                </div> `
 
+            
+        });
+        const handleCargarCancion= (i)=> {
+            console.log("me hicieron click en tema 3");
+            //imprimir en consola los datos de cancion #3
+            
+            const artista = listaArtistas(i);
+            const cancion = listaCanciones(i);
+
+            console.log("El artista es:", artista, "y la cancion es:", cancion);
+        }
+        
+        btn3.addEventListener("Click", ()=> handleCargarCancion(2));
+           
+            
+
+            
+        handleCargarCancion(1);
+        handleCargarCancion(3);
+        handleCargarCancion(4);
+            
+        
+        
     </script>
 </body>
 </html>
