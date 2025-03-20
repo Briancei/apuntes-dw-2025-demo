@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>App de Música</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
     <div class="container">
@@ -24,13 +24,21 @@
         <div id="tab3" class="tab-content" style="background-color: #90ee90;">
 
                 <h1>Canción Actual</h1>
+
+                <div class="current-song.info">
+                    
+                    <h2>Seleccione una canción</h2>
+                   
+                </div>
+
                 <div class="player">
+                    <i class="fas fa-step-backward"></i>
                     <i class="fas fa-play"></i>
                     <i class="fas fa-pause"></i>
                     <i class="fas fa-step-forward"></i>
-                    <i class="fas fa-step-backward"></i>
+
                 </div>
-                <audio src="" controls></audio>
+                <audio src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3" controls id="audioPlayer"></audio>
             
         </div>
     </div>

@@ -7,6 +7,10 @@ const cancionActual = document.getElementById("cancionActual");
 
 let idCancionActual = 0;
 
+let posicionTemaActual = 0;
+
+listaTemas[4]
+
 const canciones = [
     {
         id: 1,
@@ -70,30 +74,78 @@ canciones.forEach(tema => {
 
     // Usamos innerHTML para crear nuestros temas
     containerCanciones.innerHTML += `               
-        <li class="cardCancion">
+        <li class="cardCancion" data-id="${id}">
             <img class="imgCancion" src="./${imagen}" alt="${artista}">
             <div>
                 <h2 class="tituloCancion" >${titulo}</h2>
                 <small class="artistaCancion" >${artista}</small>
             </div>
         </li>`;
+
+
+        // agarrar el último hijo agregado, para incluirle un eventlistener
+        const cardCancion = containerCanciones.lastElementChild;
+        cardCancion.addEventListener("click", () => {
+          cargarCancion (id);
+          document.querySelector("[data-tab='tab3']").click();
+        });
+    
 });
 
 // ------------------- REPRODUCTOR ------------------- //
+const playBtn = document.querySelector (".fa-play");
+const pauseBtn= document.querySelector (".a-pause");
+const nextBtn= document.querySelector (".fa-step-forward");
+const prevBtn=  document.querySelector (".fa-step-backward");
+const audioPlayer= document.querySelector("#audioPlayer"); //Nuestro reproductor.
 
-// corregir este código. Usar la clase .cardCancion para añadir el addeventlistener
-//canciones.addEventListener("click" (titulo) => {
+const divCurrentSongInfo = document.querySelector(".current-song-info");
+pauseBtn.style.display = "none";
 
-//cardCancion.innerHTML = `      
-                //<h4>${cancion}</h4>
-                //<small>${artista}</small>`,
+// funcion para cargar un tema
 
-//});
+function cardCancion(id){
+    // recorremos nuestras canciones, y obtenemos solo la que me interesa.
+    const cancion= listaTemas.find(tema => tema.id == id);
 
-const cardCancion = document.querySelector('.cardCancion');
+    if(!cancion){ return; }
 
-cardCancion.addEventListener("click", () => {
-  cardCancion.innerHTML = `      
-    <h4>${cancion}</h4>
-    <small>${artista}</small>`;
+    const {titulo, imagen, artista, fuente} = cancion;
+        console.log(cancion);
+        audioPlayer.src = fuente;
+        idCancionActual = id;
+
+        divCurrentSongInfo.innerHTML = `<img src="${imagen}" alt="${artista}">
+                                        <h2>${titulo}</h2>
+                                        <p>${artista}</p>`;
+
+    audioPlayer.play();
+    playBtn.style.display = "none";
+    pauseBtn.style.display= "inline";
+}
+
+// Event Listeners de botones de reproductor
+playBtn.addEventListener("click", () => {
+    audioPlayer.play();
+    playBtn.style.display = "none";
+    pauseBtn.style.display= "inline";
 });
+
+pauseBtn.addEventListener("click", ()=>{
+    audioPlayer.play();
+    playBtn.style.display = "inline";
+    pauseBtn.style.display= "none";
+});
+
+    nextBtn.addEventListener("click", ()=>{
+        posicionTemaActual++;
+        const idCancion = listaTemas [posicionTemaActual].id;
+        cargarCancion(idCancion);
+    });
+
+    prevtBtn.addEventListener("click", ()=>{
+        posicionTemaActual--;
+        const idCancion = listaTemas [posicionTemaActual].id;
+        cargarCancion(idCancion);
+    });
+

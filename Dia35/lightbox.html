@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Lightbox para 4 Imágenes</title>
+  <style>
+    
+    /* Ocultar el lightbox por defecto */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Imagen dentro del lightbox */
+.lightbox-content {
+  max-width: 90%;
+  max-height: 80%;
+}
+
+/* Botón de cerrar */
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin: 20px;
+}
+
+/* Estilos para cada imagen en la galería */
+.gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  cursor: pointer;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  border-color: #777;
+}
+
+  </style>
+</head>
+<body>
+    <div class="gallery">
+  <img src="./img/ab6761610000e5eb10d5b8dbca35ad2363617406.jpeg" alt="Imagen 1" class="lightbox-caja" data-imagen="./img/ab6761610000e5eb10d5b8dbca35ad2363617406.jpeg">
+  <img src="./img/ab67616d00001e02fad916dcd1c8495fd7be7ee6.jpeg" alt="Imagen 2" class="lightbox-caja" data-imagen="./img/ab67616d00001e02fad916dcd1c8495fd7be7ee6.jpeg">
+  <img src="./img/ab67616d0000b27353b851ba6d8ce3ab11d9824c.jpeg" alt="Imagen 3" class="lightbox-caja" data-imagen="./img/ab67616d0000b27353b851ba6d8ce3ab11d9824c.jpeg">
+  <img src="./img/ab67616d0000b273aefa672e3d99a6f21fb5faeb.jpeg" alt="Imagen 4" class="lightbox-caja" data-imagen="./img/ab67616d0000b273aefa672e3d99a6f21fb5faeb.jpeg">
+  </div>
+
+  <!-- Contenedor del lightbox -->
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+  </div>
+
+  <script>
+    // Seleccionar elementos del DOM
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const triggers = document.querySelectorAll('.lightbox-caja');
+const closeBtn = document.querySelector('.close');
+
+// Abrir el lightbox al hacer clic en cualquiera de las imágenes
+triggers.forEach(trigger => {
+  trigger.addEventListener('click', function() {
+    const imagenGrande = this.getAttribute('data-imagen');
+    lightboxImg.src = imagenGrande;
+    lightbox.style.display = 'flex';
+  });
+});
+
+// Cerrar el lightbox al hacer clic en el botón de cerrar
+closeBtn.addEventListener('click', () => {
+  lightbox.style.display = 'none';
+});
+
+// También cerrar el lightbox al hacer clic fuera de la imagen
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) {
+    lightbox.style.display = 'none';
+  }
+});
+
+  </script>
+</body>
+</html>
