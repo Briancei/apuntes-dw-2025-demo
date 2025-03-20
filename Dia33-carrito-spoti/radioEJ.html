@@ -28,12 +28,19 @@
     <!-- aqui van mis canciones-->
 
     <div class="controllers">
-        <button id="btn3">Tema 3</button>
+        <button id="btnNext">Next</button>
+      <button id="btnPrev">Prev</button>
+      <button id="btnPlay">Play</button>
+      <button id="btnPause">Pausa</button>
+      <button id="btn3">Tema 3</button>
+
     </div>
 </div>
 
     <script>
         const playList = document.getElementById("playlist");
+        const controllers = document.querySelectorAll(".controllers");
+        const btn3 = controllers.querySelectorAll("")
 
         const listaCanciones = [
             "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
@@ -83,6 +90,10 @@
         }
         
         btn3.addEventListener("Click", ()=> handleCargarCancion(2));
+
+
+        // Agregar eventListener de click al documento
+        // Podemos acceder a distintos
            
             
 
