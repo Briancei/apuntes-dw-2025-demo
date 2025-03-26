@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Ej1</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="./js/script.js" defer></script>
+</head>
+<body>
+
+    <section class="seccion-normal">
+        <h1>Scroll para ver el efecto Parallax</h1>
+        <p>Esta es una sección normal para ocupar espacio</p>
+
+        
+        <!-- Sección parallax1 -->
+        <seccion class="parallax-contenedor" id="seccion-1">
+
+            <!--Elemento que contenga al fondo de nuestra ventana-->
+                    <div class="parallax-bg" style="background-image: url('./img/game-parallax-background-vector.jpg');"></div>
+            
+                    <div class="parallax-contenido">
+                        <h2>Sección uno</h2>
+                        <p>Este contenido está sobre el parallax</p>
+                        <!--Añadir una imagen pequeña que también se mueva-->
+                        <img src="./img/2e5373c1c5da8142cb7195ba2a605833-removebg-preview.png" alt="Lobo" class="parallax-flotante" id="flotante-1" data-parallax-type="moveY, rotate"
+                        data-parallax-speed="0.2"
+                        data-parallax-direction="-1">
+            
+                        <!--Direction -1 invierte el movimiento/ rotación base-->
+                    </div>
+    </section>
+
+        <section class="seccion-normal">
+            <h1>Scroll para ver el efecto Parallax</h1>
+            <p>Esta es una sección normal para ocupar espacio</p>
+
+            <seccion class="parallax-contenedor" id="seccion-2">
+                <!--Elemento que contenga al fondo de nuestra ventana-->
+                        <div class="parallax-bg" style="background-image: url('./img/360_F_114471291_nbYCT471AB0Ck6Wingz7YVCRFlUhdUvG.jpg');"></div>
+                
+                        <div class="parallax-contenido">
+                            <h2>Sección dos</h2>
+                            <p>Este contenido está sobre el parallax</p>
+                            <!--Añadir una imagen pequeña que también se mueva-->
+                            <img src="./img/2e5373c1c5da8142cb7195ba2a605833-removebg-preview.png" alt="Lobo" class="parallax-flotante" id="flotante-2" 
+                            data-parallax-type="moveX"
+                            data-parallax-speed="0.3">
+                
+                            <!--Direction -1 invierte el movimiento/ rotación base-->
+                        </div>
+            
+        </section>
+
+        <section class="seccion-normal">
+            <h1>Scroll para ver el efecto Parallax</h1>
+            <p>Esta es una sección normal para ocupar espacio</p>
+
+            <seccion class="parallax-contenedor" id="seccion-3">
+                <!--Elemento que contenga al fondo de nuestra ventana-->
+                        <div class="parallax-bg" style="background-image: url('./img/PQ3O2P.png');"></div>
+                
+                        <div class="parallax-contenido">
+                            <h2>Sección tres</h2>
+                            <p>Ultima sección de relleno</p>
+                            <!--Añadir una imagen pequeña que también se mueva-->
+                            <img src="./img/2e5373c1c5da8142cb7195ba2a605833-removebg-preview.png" alt="Lobo" class="parallax-flotante" id="flotante-3" 
+                            data-parallax-type="moveY,opacity"
+                            data-parallax-speed="0.5">
+                
+                            <!--Direction -1 invierte el movimiento/ rotación base-->
+                        </div>
+            
+        </section>
+
+</body>
+</html>
