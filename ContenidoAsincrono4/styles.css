@@ -1,0 +1,327 @@
+/*------------------------------------------------------------------------------------*/
+/*--------------------------------GENERALES-------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.container {
+    display: flex;
+    padding: 100px;
+    flex-direction: column;
+    flex-grow: 1;
+ 
+  
+    
+    
+
+}
+
+.header {
+   
+    display: flex;
+    justify-content: space-between;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 40px;
+    position: fixed;
+    
+
+}
+
+.header-button{
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border: none; 
+    margin-right: 40px; 
+}
+
+.header-txt{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 1.25REM;
+}
+
+
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+   padding: 70px;
+    height: 100vh;
+    width: 100vw;
+    
+    
+}
+
+.silla, .mesa {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    transition: opacity 1s ease-out, transform 1s ease-in-out;
+    opacity: 1;
+    transform: translateY(0);
+    position: fixed;
+    top:50 ;
+    left: 40;
+    right: 40;
+    justify-content: space-between;
+
+}
+
+
+
+.silla.oculto, .mesa.oculto {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+/*------------------------------------------------------------------------------------*/
+/*--------------------------------TEXTO-------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+/*
+.textos {
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+    align-items: left;
+    padding: 40px;
+    padding-left: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 50%;
+    min-width: 50%;
+    
+   
+
+} */
+
+
+
+
+
+/* 
+/*----------------- Mesa---------------------*/
+
+.txt-mesa, .txt-silla {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    min-width: 200px;
+    opacity: 1;
+    transition: opacity 1s ease-out, transform 2s ease-in-out; 
+    position: relative;
+    top: 50;
+    margin-right: 200px;
+    
+}
+
+.img-mesa, .img-silla{
+    max-width: 70%;
+    height: auto;
+    
+    opacity: 1;
+    transition: opacity 1s ease-out, transform 2s ease-in-out;
+    padding: 50px;
+    position: relative;
+    bottom: 150px;
+    
+   
+  
+}
+
+.txt-mesa.oculto,
+.img-mesa.oculto {
+    
+    opacity: 0;
+    transform: translateY(-100px);
+    
+    
+}
+
+.txt-silla.oculto,
+.img-silla.oculto {
+    opacity: 0;
+    transform: translateY(-100px); 
+
+    
+    
+} 
+
+
+
+
+
+/*----------------- Silla---------------------*/
+
+
+
+
+
+
+/*-----------------Textos generales---------------------*/
+.txt-autor {
+    color: #555;
+    font-size: 0.875rem;
+    margin-bottom: 10px;
+}
+
+.txt-titulo {
+    color: #000;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 15px 0;
+
+}
+
+.txt-descripcion {
+    color: #777;
+    font-size: 0.875rem;
+    margin: 0;
+    
+ 
+}
+
+/*-----------------Cuadrito Details---------------------*/
+
+.details {
+    padding: 0.8rem;
+    color: white;
+    width: 170px;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-size: 0.9rem;
+    position: fixed;
+    bottom: 30%;
+
+}
+
+
+
+/*------------------------------------------------------------------------------------*/
+/*--------------------------------IMAGENES-------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+
+.imagenes{
+    height: 100vh;
+    width: auto;
+}
+.img {
+    
+    height: auto;
+    max-width: 50%;
+    min-width: 50%;
+}
+
+
+
+
+/*------------------------------------------------------------------------------------*/
+/*--------------------------------FOOTER-------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+
+/*-----------------General---------------------*/
+.footer {
+
+    display: flex;
+    flex-direction: row;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.75rem;
+    background-color: #e7e5e5;
+    width: 100%;
+
+   
+    bottom: 0;
+    z-index: 1000;
+    padding: 10px 50px;
+    position: fixed;
+ 
+
+
+}
+
+.footer-numero {
+    color: #777;
+    font-weight: bold;
+    
+}
+
+.footer-nombre {
+    color: #000;
+    font-weight: bold;
+   
+}
+
+/*-----------------General + Transición Opacidad---------------------*/
+.footerSilla,
+.footerMesa {
+    display: inline-block;
+    flex-direction: column;
+   padding: 10px 10px 10px 0;
+    width: 10.625rem;
+   
+   
+    position: relative;
+    border: 0;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+    
+}
+.footerSilla.completa,
+.footerMesa.completa {
+    opacity: 1;
+    
+}
+
+
+/*-----------------Barrita + Transición Width---------------------*/
+
+
+.barrita-silla, .barrita-mesa{
+    height: 5px;
+    width: 0px;
+    background-color: rgb(177, 176, 176);
+    position: absolute;
+    top: -12px;
+    transition: width 2s ease;
+    
+    
+
+}
+
+.barrita-silla.completa, .barrita-mesa.completa{
+   width: 170px;
+   background-color: rgb(88, 87, 87);
+   opacity: 1;
+   
+}
+
+@media (max-width: 768px) {
+    .header, .footer {
+        padding: 10px;
+    }
+
+    .textos, .imagenes {
+        padding: 10px;
+    }
+
+    .footerSilla, .footerMesa {
+        width: 120px;
+    }
+
+    .barrita-silla.completa, .barrita-mesa.completa {
+        width: 120px;
+    }
+}
