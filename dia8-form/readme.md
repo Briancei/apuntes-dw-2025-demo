@@ -3,7 +3,7 @@
 ## Formularios
 
 - Los formularios utilizan las etiquetas envolventes de <form>
-- Utilizamos etiquetas <input> para ingresar datos. Algunos tipos (`type`) de ellos eran : radio, checkbox, text, email, password, submit.
+- Utilizamos etiquetas <input> para ingresar datos. Algunos tipo (`type`) de ellos eran : radio, checkbox, text, email, password, submit.
 - Todos los atributos REQUIEREN el atributo `name` para enviar la información, Este debe ser único, excepto con los <input> type="radio".
 - Utilizamos otras etiquetas para algunos tips datos, por ej: <textarea>, <select> + <option>
 - Los inputs suelen estar acompañados de un <label> como descripción.
